@@ -1,10 +1,15 @@
 package test;
 
 public class model {
-    private String[] special = {"@", ".", "&", "*", "!", "^"};
+    private static String[] special = {"@", ".", "&", "*", "!", "^"};
 
     public static Boolean checkEmail(String email){
-        return true;
+        if (email.contains(special[0])){
+            return true;
+        }
+
+
+        return false;
     }
 
 }
