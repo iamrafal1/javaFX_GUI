@@ -1,17 +1,17 @@
 package test;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class model {
     private static String[] special = {"@", ".", "&", "*", "!", "^"};
+    private static Pattern mail = Pattern.compile("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$");
+    private static Pattern pass = Pattern.compile("");
 
     public static Boolean checkEmail(String email){
-        if (email.contains(special[0]) && email.contains(special[1])){
-            if (email.indexOf(special[1]) > email.indexOf(special[0])) {
-                return true;
-            }
-        }
-
-
-        return false;
+        Matcher match = mail.matcher(email);
+        return match.matches();
     }
+
+
 
 }

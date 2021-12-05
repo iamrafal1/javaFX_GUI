@@ -2,7 +2,11 @@ package test;
 
 public class test {
     public static void main(String[] args){
-        String str = "xyz@.";
-        System.out.println(model.checkEmail(str));
+        System.out.println(model.checkEmail("xyz@"));
+        System.out.println(model.checkEmail("xyz@."));
+        System.out.println(model.checkEmail("xyz@gmail."));
+        System.out.println(model.checkEmail("@gmail.com"));
+        System.out.println(model.checkEmail("xyz@gmail.com"));
+
     }
 }
